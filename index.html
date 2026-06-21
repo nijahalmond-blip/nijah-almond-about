@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Nijah Almond</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-deep:#073B45;
+    --teal-mid:#085866;
+    --teal-light:#0C6373;
+    --amber:#F2B41A;
+    --ink:#2A1F1A;
+    --terracotta:#E37A7A;
+    --blush:#E8B7C5;
+    --blush-light:#F6E4DA;
+    --cream:#FBF4EE;
+    --white:#FFFFFF;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .narrow{max-width:760px;margin:0 auto;padding:0 32px}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-0.01em}
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+  .rule{height:3px;width:100%;background:var(--amber);border:0}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(7,59,69,.96);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:var(--serif);font-size:22px;color:var(--white);letter-spacing:.02em}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a{color:var(--white);text-decoration:none;font-size:14px;letter-spacing:.04em;opacity:.85;transition:opacity .2s}
+  .navlinks a:hover{opacity:1}
+  .navcta{background:var(--amber);color:var(--teal-deep)!important;padding:10px 18px;border-radius:2px;font-weight:600;opacity:1!important}
+  @media(max-width:720px){.navlinks a:not(.navcta){display:none}}
+
+  /* HERO */
+  .hero{background:var(--teal-deep);color:var(--white);padding:112px 0 104px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(242,180,26,.14),transparent 70%)}
+  .hero-inner{position:relative;z-index:1}
+  .hero h1{font-size:clamp(44px,6vw,84px);color:var(--white);margin:22px 0 26px}
+  .hero h1 em{font-style:italic;color:var(--amber)}
+  .hero p{font-size:20px;font-weight:300;color:rgba(255,255,255,.84);max-width:50ch}
+
+  /* SECTIONS */
+  section{padding:88px 0}
+  .sec-cream{background:var(--cream)}
+  .sec-white{background:var(--white)}
+  .sec-blush{background:var(--blush-light)}
+  .sec-teal{background:var(--teal-deep);color:var(--white)}
+  h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:26px}
+  .sec-teal h2{color:var(--white)}
+  .lead{font-size:21px;font-family:var(--serif);font-style:italic;color:var(--teal-mid);margin-bottom:26px}
+  p.body{font-size:17.5px;margin-bottom:20px}
+  .sec-teal p.body{color:rgba(255,255,255,.85)}
+
+  /* PULL QUOTE */
+  .pq{background:var(--blush);color:var(--teal-deep);text-align:center;padding:96px 0}
+  .pq blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(28px,4vw,44px);line-height:1.18;max-width:18ch;margin:0 auto}
+
+  /* GRIT */
+  .grit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+  .grit-card{background:var(--teal-mid);border-top:3px solid var(--amber);padding:30px 24px 34px}
+  .grit-card .letter{font-family:var(--serif);font-size:60px;color:var(--amber);line-height:1;margin-bottom:14px}
+  .grit-card h3{font-size:22px;color:var(--white);margin-bottom:10px}
+  .grit-card p{font-size:14.5px;color:rgba(255,255,255,.78)}
+  @media(max-width:860px){.grit-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.grit-grid{grid-template-columns:1fr}}
+
+  /* CREDENTIALS */
+  .cred-list{list-style:none;columns:2;column-gap:48px;margin-top:18px}
+  .cred-list li{break-inside:avoid;padding:12px 0 12px 26px;position:relative;font-size:16px;border-bottom:1px solid rgba(42,31,26,.1)}
+  .cred-list li:before{content:"";position:absolute;left:0;top:20px;width:10px;height:10px;background:var(--amber);border-radius:1px}
+  @media(max-width:620px){.cred-list{columns:1}}
+
+  /* WHO */
+  .who-list{margin:24px 0 0;padding:0;list-style:none}
+  .who-list li{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--teal-deep);padding:14px 0;border-bottom:1px solid rgba(7,59,69,.12)}
+
+  /* CTA */
+  .cta{background:var(--teal-deep);color:var(--white);text-align:center;padding:104px 0}
+  .cta h2{color:var(--white);max-width:20ch;margin:0 auto 22px}
+  .cta-statement{font-size:clamp(44px,6vw,82px)!important;max-width:none!important;line-height:1.02!important;margin-bottom:28px!important}
+  .cta-statement em{font-style:italic;color:var(--amber)}
+  .cta-actions{margin:8px 0 4px}
+  .cta p{font-size:18px;color:rgba(255,255,255,.82);max-width:54ch;margin:0 auto 36px}
+  .btn{display:inline-block;text-decoration:none;font-weight:600;letter-spacing:.03em;padding:16px 34px;border-radius:2px;transition:transform .15s,background .2s}
+  .btn-primary{background:var(--amber);color:var(--teal-deep)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:var(--white);margin-left:14px}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+  .cta-tertiary{margin-top:28px;font-size:14.5px;color:rgba(255,255,255,.6)}
+  .cta-tertiary a{color:var(--amber);text-decoration:none}
+  @media(max-width:520px){.btn-ghost{margin-left:0;margin-top:14px}}
+
+  footer{background:#052b33;color:rgba(255,255,255,.6);padding:40px 0;font-size:13px;text-align:center;letter-spacing:.04em}
+
+  /* UTILITY BUTTONS (print / save) */
+  .utility-bar{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px}
+  .util-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.04em;padding:11px 18px;border-radius:2px;border:0;cursor:pointer;box-shadow:0 4px 14px rgba(7,59,69,.22);transition:transform .15s}
+  .util-btn:hover{transform:translateY(-2px)}
+  .util-print{background:var(--teal-deep);color:var(--white)}
+  .util-save{background:var(--amber);color:var(--teal-deep)}
+  @media print{.utility-bar,nav .navcta,.mira-launch,.mira-panel{display:none!important}}
+
+  /* MIRA CHAT WIDGET */
+  .mira-launch{position:fixed;left:20px;bottom:20px;z-index:70;display:flex;align-items:center;gap:10px;background:var(--teal-deep);color:var(--white);border:0;cursor:pointer;padding:13px 20px 13px 14px;border-radius:40px;box-shadow:0 8px 24px rgba(7,59,69,.35);font-family:var(--sans);font-size:14px;font-weight:600;transition:transform .15s}
+  .mira-launch:hover{transform:translateY(-2px)}
+  .mira-launch .dot{width:34px;height:34px;border-radius:50%;background:var(--amber);color:var(--teal-deep);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600}
+  .mira-panel{position:fixed;left:20px;bottom:20px;z-index:71;width:360px;max-width:calc(100vw - 40px);height:520px;max-height:calc(100vh - 40px);background:var(--cream);border-radius:14px;box-shadow:0 18px 50px rgba(7,59,69,.4);display:none;flex-direction:column;overflow:hidden}
+  .mira-panel.open{display:flex}
+  .mira-head{background:var(--teal-deep);color:var(--white);padding:18px 20px;display:flex;align-items:center;gap:12px}
+  .mira-head .dot{width:40px;height:40px;border-radius:50%;background:var(--amber);color:var(--teal-deep);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:23px;font-weight:600}
+  .mira-head .who{flex:1}
+  .mira-head .who b{font-family:var(--serif);font-size:19px;font-weight:600;display:block;line-height:1.1}
+  .mira-head .who span{font-size:12px;opacity:.75;letter-spacing:.03em}
+  .mira-close{background:transparent;border:0;color:var(--white);font-size:22px;cursor:pointer;opacity:.8;line-height:1}
+  .mira-close:hover{opacity:1}
+  .mira-log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+  .msg{max-width:84%;padding:11px 14px;border-radius:14px;font-size:14.5px;line-height:1.5}
+  .msg.bot{background:var(--white);color:var(--ink);border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 1px 4px rgba(42,31,26,.08)}
+  .msg.user{background:var(--teal-mid);color:var(--white);border-bottom-right-radius:4px;align-self:flex-end}
+  .msg a{color:var(--teal-deep);font-weight:600}
+  .msg.user a{color:var(--amber)}
+  .mira-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 12px}
+  .chip{background:transparent;border:1px solid var(--teal-light);color:var(--teal-deep);font-family:var(--sans);font-size:12.5px;font-weight:500;padding:8px 13px;border-radius:30px;cursor:pointer;transition:background .15s,color .15s}
+  .chip:hover{background:var(--teal-deep);color:var(--white)}
+  .mira-input{display:flex;gap:8px;padding:14px 16px;border-top:1px solid rgba(7,59,69,.12);background:var(--cream)}
+  .mira-input input{flex:1;border:1px solid rgba(7,59,69,.2);border-radius:24px;padding:11px 16px;font-family:var(--sans);font-size:14px;outline:none}
+  .mira-input input:focus{border-color:var(--amber)}
+  .mira-input button{background:var(--amber);color:var(--teal-deep);border:0;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:18px;font-weight:700}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Nijah Almond</span>
+    <div class="navlinks">
+      <a href="#story">Story</a>
+      <a href="#grit">GRIT</a>
+      <a href="https://www.skool.com/the-legacy-lounge-free-7046/about?ref=4aecf50ea0e64eb0924b177d6890a1fb" class="navcta">Join the Legacy Lounge</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="narrow hero-inner">
+    <span class="eyebrow">About Nijah Almond</span>
+    <h1>You have built an impressive life.<br>And something still feels <em>off</em>.</h1>
+    <p>That is not ingratitude. That is not weakness. That is an identity gap. And it will not close no matter how much more you achieve.</p>
+  </div>
+</header>
+<hr class="rule">
+
+<!-- SECTION 1 -->
+<section class="sec-cream" id="story">
+  <div class="narrow">
+    <span class="eyebrow">The thing no one is saying</span>
+    <h2>You are not the woman who needs to be told to work harder.</h2>
+    <p class="body">You have been working. You have been producing. You have been showing up, leading, delivering, and making it happen for longer than most people could sustain it. And you have been doing all of it while quietly carrying a feeling you cannot fully explain.</p>
+    <p class="body">Something is off. On paper, everything looks right. The title is there. The income is there. The track record is there. But internally, there is a gap between who you are on the outside and what you actually feel on the inside.</p>
+    <p class="body">That gap has a name. It is called identity misalignment. The reason nothing you have tried has closed it is because you have been trying to fix it with strategy, productivity, and momentum. None of those tools touch the root. The root is identity.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: STORY -->
+<section class="sec-white">
+  <div class="narrow">
+    <span class="eyebrow">My story</span>
+    <h2>I know what this feels like because I lived it.</h2>
+    <p class="lead">For over a decade, I built a career in high-pressure federal leadership. By every external measure, I was doing exactly what I was supposed to do. And I felt completely off.</p>
+    <p class="body">I did not have language for it then. I knew I was tired. I knew something was not right. But I kept moving, because that is what you do when you are the strong one, the capable one, the one people depend on.</p>
+    <p class="body">Then I was diagnosed with a chronic illness. The pace that had been holding everything together stopped. I had to be still. And in that stillness, I could not avoid the truth I had been outrunning.</p>
+    <p class="body">I had built an entire life around a version of myself constructed from other people's expectations, institutional rewards, and survival. That version of me had become completely unrecognizable as mine. That was not a breakdown. That was the most important moment of my life.</p>
+    <p class="body">The question that surfaced was not "how do I perform better?" It was "who am I outside of all of this?" That question became the foundation for every piece of work I now do. I did not start coaching to share what I read. I started because I lived the gap, closed it, and now I know exactly what it takes to do both.</p>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pq">
+  <blockquote>You cannot change your life until you are willing to see yourself clearly.</blockquote>
+</div>
+
+<!-- SECTION 4: GRIT -->
+<section class="sec-teal" id="grit">
+  <div class="wrap">
+    <span class="eyebrow">The GRIT Identity Transformation System</span>
+    <h2>It does not start with strategy. It starts with truth.</h2>
+    <div class="grit-grid">
+      <div class="grit-card">
+        <div class="letter">G</div><h3>Gap</h3>
+        <p>We name the distance between who you are performing as and who you actually are. Not vaguely. Specifically.</p>
+      </div>
+      <div class="grit-card">
+        <div class="letter">R</div><h3>Reality</h3>
+        <p>We examine the conditioning, patterns, and inherited beliefs quietly running you. Not to assign blame. To establish freedom.</p>
+      </div>
+      <div class="grit-card">
+        <div class="letter">I</div><h3>Identity</h3>
+        <p>We rebuild your sense of self around chosen values and internal authority. Not who you were shaped to be. Who you are choosing to become.</p>
+      </div>
+      <div class="grit-card">
+        <div class="letter">T</div><h3>Truth</h3>
+        <p>We close the gap between what you know and how you live. Where transformation becomes something you embody, not just understood in a session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CREDENTIALS -->
+<section class="sec-white">
+  <div class="narrow">
+    <span class="eyebrow">Credentials</span>
+    <h2>I lived the gap, built the framework, and now help other women do the same.</h2>
+    <ul class="cred-list">
+      <li>12 years in federal service and high-performance leadership</li>
+      <li>Supervisory Immigration Services Officer, training and leadership</li>
+      <li>Certified Life Coach</li>
+      <li>Certified Corporate Trainer</li>
+      <li>QPR Suicide Prevention Instructor</li>
+      <li>Resilience Ambassador</li>
+      <li>Bachelor's Degree and MBA</li>
+      <li>Advanced studies in leadership and behavioral development</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION 6: WHO -->
+<section class="sec-blush">
+  <div class="narrow">
+    <span class="eyebrow">Who I work with</span>
+    <h2>High-performing women asking a different question.</h2>
+    <p class="body">Usually between 35 and 55, earning $100,000 or more, senior enough to have proven themselves and tired enough of proving themselves. You are:</p>
+    <ul class="who-list">
+      <li>A mid-to-senior leader in corporate, federal, or institutional environments.</li>
+      <li>Accomplished by any reasonable standard.</li>
+      <li>Operating on a level most people cannot sustain.</li>
+      <li>Carrying an internal misalignment that achievement has not touched.</li>
+      <li>Asking, quietly and persistently, whether this is really it.</li>
+    </ul>
+    <p class="body" style="margin-top:26px">You are not a beginner. You do not need encouragement. You need someone who will tell you the truth and help you build from it. That is exactly what I do.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="narrow">
+    <span class="eyebrow">Where this begins</span>
+    <h2 class="cta-statement">Stop performing.<br>Start <em>becoming</em>.</h2>
+    <p>You have spent years closing every gap but the one that matters. Join the Legacy Lounge. It is free. A space for high-performing women who are done managing the feeling and ready to look at it directly.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://www.skool.com/the-legacy-lounge-free-7046/about?ref=4aecf50ea0e64eb0924b177d6890a1fb">Join the Legacy Lounge (free)</a>
+      <a class="btn btn-ghost" href="https://identitygapscore.com">Take the Identity Gap Score</a>
+    </div>
+    <p class="cta-tertiary">Not sure where to start? <a href="https://mirrormethod.nijahalmond.com">The Mirror Method</a> is a free 25-minute guide that helps you name what's off.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Nijah Almond Coaching &amp; Consultancy · Stop performing. Start becoming.
+</footer>
+
+<div class="utility-bar">
+  <button class="util-btn util-print" onclick="window.print()">Print</button>
+  <button class="util-btn util-save" onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- MIRA CHAT WIDGET -->
+<button class="mira-launch" id="miraLaunch" aria-label="Chat with Mira">
+  <span class="dot">M</span> Chat with Mira
+</button>
+
+<div class="mira-panel" id="miraPanel" role="dialog" aria-label="Mira assistant">
+  <div class="mira-head">
+    <span class="dot">M</span>
+    <div class="who"><b>Mira</b><span>Nijah's assistant · here to help</span></div>
+    <button class="mira-close" id="miraClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="mira-log" id="miraLog"></div>
+  <div class="mira-chips" id="miraChips"></div>
+  <div class="mira-input">
+    <input type="text" id="miraInput" placeholder="Ask me anything..." autocomplete="off">
+    <button id="miraSend" aria-label="Send">&rarr;</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Rule-based responses. Mira gives limited, predefined answers only.
+  var KB = [
+    {k:['grit','program','12 week','12-week','cohort','transformation system'],
+     a:"GRIT is Nijah's 12-week Identity Transformation System. Four phases: Gap, Reality, Identity, Truth. Small group plus three 1:1 touchpoints. It is identity-first, not productivity or mindset coaching. Investment is $2,500 to $4,500. Want me to point you to the next step?"},
+    {k:['workshop','identity gap workshop','97'],
+     a:"The Identity Gap Workshop is a 90-minute live session ($97). You name your identity gap and understand what it is costing you. It is the bridge into GRIT. <a href='https://www.skool.com/the-legacy-lounge-free-7046/about?ref=4aecf50ea0e64eb0924b177d6890a1fb' target='_blank'>Start in the Legacy Lounge</a> and you will hear when the next one opens."},
+    {k:['vip','1:1','one on one','reconstruction','private'],
+     a:"Identity Reconstruction VIP is the high-touch path: weekly 1:1, priority Voxer, custom strategy, and a 90-day plan. It is for women who want this done privately and fast. Ask for a clarity conversation to see if it fits."},
+    {k:['legacy lounge','community','free','skool','join'],
+     a:"The Legacy Lounge is Nijah's free community, the place this work starts. <a href='https://www.skool.com/the-legacy-lounge-free-7046/about?ref=4aecf50ea0e64eb0924b177d6890a1fb' target='_blank'>Join the Legacy Lounge here</a>."},
+    {k:['identity gap score','score','assessment','quiz','test'],
+     a:"The Identity Gap Score is a free assessment that shows you exactly where your gap is. <a href='https://identitygapscore.com' target='_blank'>Take the Identity Gap Score</a>."},
+    {k:['mirror method','free guide','25 minute','25-minute','resource'],
+     a:"The Mirror Method is a free 25-minute guide that helps you name what feels off. <a href='https://mirrormethod.nijahalmond.com' target='_blank'>Get the Mirror Method</a>."},
+    {k:['story','who is nijah','about nijah','background','federal','chronic'],
+     a:"Nijah spent over a decade in high-pressure federal leadership. A chronic illness diagnosis forced a full stop, and in that stillness she found the identity gap she had been performing around. She built GRIT as the system she needed. Her story is in the <a href='#story'>Story section above</a>."},
+    {k:['who do you work with','for me','right for me','executive','corporate','women'],
+     a:"Nijah works with high-performing executive and corporate women, usually 35 to 55, earning $100K+, who have proven themselves and are quietly misaligned. If that sounds like you, you are in the right place."},
+    {k:['contact','email','reach','phone','call','book','clarity'],
+     a:"You can reach Nijah at Info@nijahalmond.com or (240) 941-9948. The best first step is usually a clarity conversation, or simply joining the Legacy Lounge."},
+    {k:['cost','price','pricing','how much','invest'],
+     a:"Quick map: Identity Gap Score (free), Legacy Lounge (free), Identity Gap Workshop ($97), GRIT 12-week ($2,500 to $4,500), and Identity Reconstruction VIP (private, by conversation). Which one would you like to know more about?"},
+    {k:['navigate','where','find','menu','sections','help'],
+     a:"Happy to guide you. This page has: <a href='#story'>Nijah's Story</a>, the <a href='#grit'>GRIT framework</a>, her credentials, who she works with, and how to begin. What are you looking for?"}
+  ];
+  var FALLBACK = "I keep it simple and stick to a few things: GRIT, the Identity Gap Workshop, the Legacy Lounge, the free assessments, and how to get in touch. Try one of the buttons below, or ask about any of those.";
+  var CHIPS = [
+    {t:"What is GRIT?", q:"tell me about grit"},
+    {t:"Join the Legacy Lounge", q:"legacy lounge"},
+    {t:"Take the free assessment", q:"identity gap score"},
+    {t:"Pricing", q:"pricing"},
+    {t:"Contact Nijah", q:"contact"}
+  ];
+
+  var panel=document.getElementById('miraPanel'),
+      log=document.getElementById('miraLog'),
+      input=document.getElementById('miraInput'),
+      chipsWrap=document.getElementById('miraChips'),
+      opened=false;
+
+  function add(text,who){
+    var d=document.createElement('div');
+    d.className='msg '+(who||'bot');
+    d.innerHTML=text;
+    log.appendChild(d);
+    log.scrollTop=log.scrollHeight;
+  }
+  function answer(q){
+    var s=q.toLowerCase();
+    for(var i=0;i<KB.length;i++){
+      for(var j=0;j<KB[i].k.length;j++){
+        if(s.indexOf(KB[i].k[j])>-1){ return KB[i].a; }
+      }
+    }
+    return FALLBACK;
+  }
+  function ask(q){
+    add(q,'user');
+    setTimeout(function(){ add(answer(q),'bot'); },350);
+  }
+  function renderChips(){
+    chipsWrap.innerHTML='';
+    CHIPS.forEach(function(c){
+      var b=document.createElement('button');
+      b.className='chip'; b.textContent=c.t;
+      b.onclick=function(){ ask(c.q); };
+      chipsWrap.appendChild(b);
+    });
+  }
+  function open(){
+    panel.classList.add('open'); opened=true;
+    if(!log.childNodes.length){
+      add("Hi, I'm Mira, Nijah's assistant. I can tell you about her work, the GRIT program, the free community, or help you find your way around. What brings you here?");
+      renderChips();
+    }
+    input.focus();
+  }
+  function close(){ panel.classList.remove('open'); }
+
+  document.getElementById('miraLaunch').onclick=open;
+  document.getElementById('miraClose').onclick=close;
+  document.getElementById('miraSend').onclick=function(){
+    var v=input.value.trim(); if(!v)return; ask(v); input.value='';
+  };
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ var v=input.value.trim(); if(!v)return; ask(v); input.value=''; }
+  });
+})();
+</script>
+
+</body>
+</html>
