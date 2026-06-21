@@ -137,6 +137,9 @@
   .mira-input input{flex:1;border:1px solid rgba(7,59,69,.2);border-radius:24px;padding:11px 16px;font-family:var(--sans);font-size:14px;outline:none}
   .mira-input input:focus{border-color:var(--amber)}
   .mira-input button{background:var(--amber);color:var(--teal-deep);border:0;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:18px;font-weight:700}
+  .story-grid{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:start}
+  .story-grid .story-photo{width:100%;height:auto;border-radius:14px;box-shadow:0 16px 44px rgba(7,59,69,.20);display:block}
+  @media(max-width:760px){.story-grid{grid-template-columns:1fr;gap:26px}.story-grid .story-photo{max-width:330px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -166,11 +169,16 @@
 <!-- SECTION 1 -->
 <section class="sec-cream" id="story">
   <div class="narrow">
-    <span class="eyebrow">The thing no one is saying</span>
-    <h2>You are not the woman who needs to be told to work harder.</h2>
-    <p class="body">You have been working. You have been producing. You have been showing up, leading, delivering, and making it happen for longer than most people could sustain it. And you have been doing all of it while quietly carrying a feeling you cannot fully explain.</p>
-    <p class="body">Something is off. On paper, everything looks right. The title is there. The income is there. The track record is there. But internally, there is a gap between who you are on the outside and what you actually feel on the inside.</p>
-    <p class="body">That gap has a name. It is called identity misalignment. The reason nothing you have tried has closed it is because you have been trying to fix it with strategy, productivity, and momentum. None of those tools touch the root. The root is identity.</p>
+    <div class="story-grid">
+      <img class="story-photo" src="nijah.jpg" alt="Nijah Almond" loading="lazy">
+      <div>
+        <span class="eyebrow">The thing no one is saying</span>
+        <h2>You are not the woman who needs to be told to work harder.</h2>
+        <p class="body">You have been working. You have been producing. You have been showing up, leading, delivering, and making it happen for longer than most people could sustain it. And you have been doing all of it while quietly carrying a feeling you cannot fully explain.</p>
+        <p class="body">Something is off. On paper, everything looks right. The title is there. The income is there. The track record is there. But internally, there is a gap between who you are on the outside and what you actually feel on the inside.</p>
+        <p class="body">That gap has a name. It is called identity misalignment. The reason nothing you have tried has closed it is because you have been trying to fix it with strategy, productivity, and momentum. None of those tools touch the root. The root is identity.</p>
+      </div>
+    </div>
   </div>
 </section>
 
