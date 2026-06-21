@@ -137,6 +137,14 @@
   .mira-input input{flex:1;border:1px solid rgba(7,59,69,.2);border-radius:24px;padding:11px 16px;font-family:var(--sans);font-size:14px;outline:none}
   .mira-input input:focus{border-color:var(--amber)}
   .mira-input button{background:var(--amber);color:var(--teal-deep);border:0;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:18px;font-weight:700}
+  .faq-list{margin-top:28px;border-top:1px solid rgba(7,59,69,.14)}
+  .faq-q{border-bottom:1px solid rgba(7,59,69,.14)}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 0;font-weight:600;font-size:19px;color:var(--teal-deep);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-q summary::-webkit-details-marker{display:none}
+  .faq-q summary::after{content:"+";font-size:26px;color:var(--amber);line-height:1;flex:none}
+  .faq-q[open] summary::after{content:"\2013"}
+  .faq-q .faq-a{padding:0 0 22px;color:rgba(42,31,26,.85);line-height:1.65;max-width:64ch}
+  .faq-q .faq-a a{color:var(--teal-mid);font-weight:600}
 </style>
 </head>
 <body>
@@ -250,6 +258,40 @@
       <li>Asking, quietly and persistently, whether this is really it.</li>
     </ul>
     <p class="body" style="margin-top:26px">You are not a beginner. You do not need encouragement. You need someone who will tell you the truth and help you build from it. That is exactly what I do.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec-white" id="faq">
+  <div class="narrow">
+    <span class="eyebrow">Questions</span>
+    <h2>The things women ask before they begin.</h2>
+    <div class="faq-list">
+      <details class="faq-q">
+        <summary>What is The Identity Reset?</summary>
+        <div class="faq-a">A free 9-day email course. Nine mistakes keeping you in a life that looks right and feels off, one a day, each with a ten-minute tool in the free Identity Audit Workbook. <a href="https://identity-audit-workbook.vercel.app" target="_blank" rel="noopener">Start with the Identity Audit Workbook</a>.</div>
+      </details>
+      <details class="faq-q">
+        <summary>Is this therapy?</summary>
+        <div class="faq-a">No. This is identity work. Therapy looks back to heal. This looks at who you have been performing as and who you actually are, and closes that gap. It is not productivity or mindset coaching either. Different problem, different tool.</div>
+      </details>
+      <details class="faq-q">
+        <summary>What if I can't name what's wrong?</summary>
+        <div class="faq-a">You do not need to name it first. Most women who start here cannot explain what is wrong, only that something is off. Naming it is the work. The <a href="https://identitygapscore.com" target="_blank" rel="noopener">Identity Gap Score</a> and the Identity Reset are both built to help you put words to it.</div>
+      </details>
+      <details class="faq-q">
+        <summary>I don't have time for this.</summary>
+        <div class="faq-a">This is built for women with no spare time. The Identity Reset is ten honest minutes a day for nine days. GRIT runs in a small group with three 1:1 touchpoints over twelve weeks. The point is alignment, not more on your plate.</div>
+      </details>
+      <details class="faq-q">
+        <summary>How is this different from other coaching?</summary>
+        <div class="faq-a">Most coaching treats the symptom: burnout, discipline, strategy, mindset. This treats the cause, which is identity. You cannot optimize your way out of an identity problem. That is the whole difference, and it is why the other things did not hold.</div>
+      </details>
+      <details class="faq-q">
+        <summary>I have another question.</summary>
+        <div class="faq-a">Email <a href="mailto:Info@nijahalmond.com">Info@nijahalmond.com</a> and Nijah's team will get back to you.</div>
+      </details>
+    </div>
   </div>
 </section>
 
